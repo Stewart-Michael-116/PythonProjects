@@ -1,0 +1,55 @@
+Here is my algorithm for baking sugar cookies
+
+- Input batches needed -> num_batches
+
+- If batches needed is 0, then you're done!
+
+- Preheat the oven to 350 degrees
+
+- Gather ingredients equal to num_batches multiplied by quantity of each ingredient in the recipe
+
+- In a bowl, whisk together gathered flour, baking soda, baking powder, and salt
+
+- In an electric mixer, mix the quantity of butter and sugar until well combined
+
+- Add the egg, egg yolk, and vanilla to the electric mixer bowl and mix until well combined
+
+- Add the contents from the dry ingredients bowl into the electric mixer bowl and mix until well combined
+
+- While you still have cookie dough in the bowl
+    - Gather a baking sheet
+
+    - While your baking sheet is not full
+
+        - Scoop 1 1/2 Tbsp of Cookie dough
+
+        - Roll Cookie dough into a ball
+
+        - Place on baking sheet
+
+- Wait until the oven is preheated if needed
+
+- While there is still baking sheets with raw cookie dough
+
+    - Place a baking sheet with cookie dough on it in the oven
+
+    - Wait for 9-11 minutes or until they appear baked
+
+    - Take out pan and set it on a cooling rack
+
+- Wait 5 minutes for the last batch of cookies to cooling
+
+- Eat the cookies!
+
+
+
+
+Recipe used: https://www.cookingclassy.com/sugar-cookies/
+2 1/2 cups all-purpose flour
+1/2 tsp each baking soda and baking powder
+1/2 tsp salt
+1 1/2 cups granulated sugar
+1 cup unsalted butter, softened
+1 large egg
+1 large egg yolk
+1 Tbsp vanilla
