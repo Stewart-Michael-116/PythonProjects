@@ -18,20 +18,46 @@ class ShoppingCart:
         cart_items = []
         
 
-    def add_item(self, item:ItemToPurchase):
-        pass
+    def add_item(self, item: ItemToPurchase):
+        self.append(item)
 
     def remove_item(self, item: str):
-        pass
+        for x in self.cart_items:
+            if x.item_name == item:
+                self.cart_items.remove(x)
+                
 
+    # Needs to be finished
     def modify_item(self, item: ItemToPurchase):
-        pass
+        for x in self.cart_items:
+            if(x.item_name == item.name):
+                if(item.item_name != 'none'):
+                    pass
+                if(item.item_price != 0.0):
+                    pass
+                if(item.item_quantity != 0):
+                    pass
+                if(item.total_price != 0.0):
+                    pass
+                return
+            
+        print('error message')
+
+        
+
+
 
     def get_num_items_in_cart(self):
-        pass
+        return len(self.cart_items)
 
     def get_cost_of_cart(self):
-        pass
+        total = 0
+
+        for x in self.cart_items:
+            total += x.item_price
+
+        return total
+            
 
     def print_total(self):
         pass
