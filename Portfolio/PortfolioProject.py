@@ -93,26 +93,32 @@ class ShoppingCart:
 
 
 # Main Code
-#Milestone 2 Code
+#Milestone 3 Code
 #-----------------------------------------------------------------------------------------------------------------------------------------------
-
-# Definitions
-name = "Michael Stewart"
-date = "April 30, 2023"
-shopping_cart = ShoppingCart(name, date)
+#import
+from datetime import date
 
 
+# Definitions and ask for names
+name = input("\nPlease Enter Customer Name:\n")
+date_string = input("\nPlease Enter Today's Date:\n")
+print("Customer name: {}\nToday's date: {}\n".format(name, date_string))
+shopping_cart = ShoppingCart(name, date_string)
 
+
+# Menu conditions and operations. while loop until user 
 while(1):
+
     shopping_cart.print_menu()
-    customer_request = input("Please Enter a Menu Option:")
+    customer_request = input("Please Enter a Menu Option:\n")
 
     if(customer_request == 'a'):
+
         new_item = ItemToPurchase()
-        new_item.item_name = input("Please put the item's name:")
-        new_item.item_price = float(input("Please put the item's price:"))
-        new_item.item_quantity = int(input("Please put the item's quantity:"))
-        new_item.item_description = input("Please put the item's description:")
+        new_item.item_name = input("Please put the item's name:\n")
+        new_item.item_price = float(input("Please put the item's price:\n"))
+        new_item.item_quantity = int(input("Please put the item's quantity:\n"))
+        new_item.item_description = input("Please put the item's description:\n")
         new_item.total_price = new_item.item_price * new_item.item_quantity
 
         shopping_cart.add_item(new_item)
@@ -120,35 +126,43 @@ while(1):
         print("Thank you, item added\n")
 
     elif(customer_request == 'r'):
-        item_removing = input("Please enter the name of the item to be removed:")
+
+        item_removing = input("Please enter the name of the item to be removed:\n")
         shopping_cart.remove_item(item_removing)
 
     elif(customer_request == 'c'):
 
         new_item = ItemToPurchase()
-        new_item.item_name = input("Please put the item's name you'd like to modify:")
-        new_item.item_price = float(input("Please put the item's price new price (press enter if no new price):"))
+        new_item.item_name = input("Please put the item's name you'd like to modify:\n")
+        new_item.item_price = float(input("Please put the item's price new price (press enter if no new price):\n"))
 
-        quantity = input("Please put the item's new quantity (press enter if no new quantity):")
+        quantity = input("Please put the item's new quantity (press enter if no new quantity):\n")
+
         if quantity == "":
             new_item.item_quantity = 0
         else:
             new_item.item_quantity = int(quantity)
         
-        new_item.item_description = input("Please put the item's new description (press enter if no new description):")
+        new_item.item_description = input("Please put the item's new description (press enter if no new description):\n")
 
         shopping_cart.modify_item(new_item)
         
     elif(customer_request == 'i'):
+        
         shopping_cart.print_descriptions()
 
     elif(customer_request == 'o'):
+
         shopping_cart.print_total()
     
     elif(customer_request == 'q'):
+
         break
+
     else:
+
         print("Error: Incorrect Input")
+        
         continue
         
 
