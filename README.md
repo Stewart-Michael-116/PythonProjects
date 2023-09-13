@@ -9,3 +9,7 @@ project trail.
 3/22/2023:
 --------------------------
 Didn't make time haha but starting a masters in order to do this thing.
+
+9/12/2023:
+--------------------------
+Finished first class a while back and now added folders for different classes
