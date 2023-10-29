@@ -1,0 +1,3 @@
+References
+Step Refinement. Stepwise refinement. (n.d.). https://www.cs.uct.ac.za/mit_notes/software/htmls/ch07s09.html#:~:text=Stepwise%20refinement%20is%20the%20idea,more%20detail%20at%20each%20increment. 
+Stepwise refinement. A Level Computer Science. (2023, June 4). https://learnlearn.uk/alevelcs/stepwise-refinement/ 
