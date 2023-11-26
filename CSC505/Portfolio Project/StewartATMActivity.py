@@ -1,1 +1,0 @@
-#Stewart ATM Activity Diagram

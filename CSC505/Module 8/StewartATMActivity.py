@@ -1,0 +1,18 @@
+#Stewart ATM Activity Diagram
+
+print("\nSteps for ATM Deposit:")
+print("User Approaches Machine")
+print("Put in Debit Card")
+print("Input Pin")
+print("Confirm they are under password limit")
+print("Retrieve Balance")
+print("Record User")
+print("Check if balance is more than 0, if not, close the account.")
+print("User chooses transaction they'd like")
+print("User chooses deposit")
+print("User adds money to ATM")
+print("ATM confirms money's value and updates balance")
+print("User chooses Withdrawal")
+print("User puts in amount")
+print("Confirm it is less than total balance and dispense money")
+print("Eject card\n")
