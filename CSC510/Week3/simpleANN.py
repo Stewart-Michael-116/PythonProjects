@@ -86,7 +86,7 @@ best_layer1_biases = layer1.biases.copy()
 best_layer2_biases = layer2.biases.copy()
 iteration_list = []
 
-for iteration in range(100000):
+for iteration in range(9999999999999999999999):
     layer1.weights += 0.05 * np.random.randn(2,3)
     layer1.biases += 0.05 * np.random.randn(1,3)
     layer2.weights += 0.05 * np.random.randn(3,3)
