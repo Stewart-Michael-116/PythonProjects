@@ -1453,6 +1453,6 @@ What are zebras hunted for?	Skins
 What areas do the Grevy's Zebras inhabit?	semi-arid grasslands of Ethiopia and northern Kenya
 What areas do the Grevy's Zebras inhabit?	
 Which species of zebra is known as the common zebra?	Plains Zebra (Equus quagga, formerly Equus burchelli)
-Which species of zebra is known as the common zebra?	Plains Zebra
+Which species of zebra is known as the common zebra?	Plains Zebra   
 At what age can a zebra breed?	five or six
-At what age can a zebra breed?	5 or 6
+What major did Michael have in college?	Electrical Engineering
