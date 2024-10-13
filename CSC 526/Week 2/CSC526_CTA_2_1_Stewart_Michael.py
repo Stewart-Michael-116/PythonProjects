@@ -63,25 +63,29 @@ input_images = tf.compat.v1.placeholder(tf.float32, shape=[None, 784])
 
 target_labels = tf.compat.v1.placeholder(tf.float32, shape=[None, 10])
 
-hidden_nodes = 512
+hidden_nodes = 4096
+hidden2_nodes = 4096
 
 input_weights = tf.Variable(tf.compat.v1.truncated_normal([784, hidden_nodes]))
 
 input_biases = tf.Variable(tf.zeros([hidden_nodes]))
 
-hidden_weights = tf.Variable(tf.compat.v1.truncated_normal([hidden_nodes, 10]))
+hidden_weights = tf.Variable(tf.compat.v1.truncated_normal([hidden_nodes, hidden2_nodes]))
+hidden2_weights = tf.Variable(tf.compat.v1.truncated_normal([hidden2_nodes, 10]))  # From first hidden to second hidden
 
-hidden_biases = tf.Variable(tf.zeros([10]))
+hidden_biases = tf.Variable(tf.zeros([hidden_nodes]))
+hidden2_biases = tf.Variable(tf.zeros([10]))
 
 input_layer = tf.matmul(input_images, input_weights)
 
 hidden_layer = tf.nn.relu(input_layer + input_biases)
+hidden2_layer = tf.nn.relu(hidden_layer + hidden_biases)
 
-digit_weights = tf.matmul(hidden_layer, hidden_weights) + hidden_biases
+digit_weights = tf.matmul(hidden2_layer, hidden2_weights) + hidden2_biases
 
 loss_function = tf.reduce_mean(tf.compat.v1.nn.softmax_cross_entropy_with_logits_v2(logits=digit_weights, labels=target_labels))
 
-optimizer = tf.compat.v1.train.GradientDescentOptimizer(0.5).minimize(loss_function)
+optimizer = tf.compat.v1.train.GradientDescentOptimizer(0.8).minimize(loss_function)
 
 correct_prediction = tf.equal(tf.argmax(digit_weights,1), tf.argmax(target_labels,1))
 
@@ -91,7 +95,7 @@ tf.compat.v1.global_variables_initializer().run()
 
 EPOCH = 20
 
-BATCH_SIZE = 100
+BATCH_SIZE = 30
 
 TRAIN_DATASIZE,_ = x_train.shape
 
@@ -116,3 +120,16 @@ for e in range(EPOCH):
     print("Training epoch " + str(e+1))
 
     print("Accuracy: " + str(accuracy.eval(feed_dict={input_images: x_test, target_labels: y_test})))
+
+predictions = tf.argmax(digit_weights, axis=1)
+predicted_labels = predictions.eval(feed_dict={input_images: test_images})
+true_labels = np.argmax(y_test, axis=1)
+
+misclassified_indices = np.where(predicted_labels != true_labels)[0]
+
+wrong_answer_array = np.zeros(10)
+
+for index in misclassified_indices:
+    wrong_answer_array = y_train[index] + wrong_answer_array
+
+print(wrong_answer_array)
