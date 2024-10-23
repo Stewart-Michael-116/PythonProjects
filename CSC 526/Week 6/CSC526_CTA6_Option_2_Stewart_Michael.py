@@ -14,9 +14,6 @@ IMG_SIZE = (94, 125)
 def pixels_from_path(file_path):
 
     im = Image.open(file_path)
-
-   
-
     im = im.resize(IMG_SIZE)
 
     np_im = np.array(im)
@@ -95,3 +92,24 @@ labels_train = np.asarray([1 for _ in range(SAMPLE_SIZE)]+[0 for _ in range(SAMP
 x_valid = np.concatenate([cat_valid_set, dog_valid_set])
 
 labels_valid = np.asarray([1 for _ in range(valid_size)]+[0 for _ in range(valid_size)])
+
+total_pixels = img_size[0] *img_size[1] * 3
+
+fc_size = 512
+
+ 
+
+inputs = keras.Input(shape=(img_size[1], img_size[0],3), name='ani_image')
+
+x = layers.Flatten(name = 'flattened_img')(inputs) #turn image to vector.
+
+ 
+
+x = layers.Dense(fc_size, activation='relu', name='first_layer')(x)
+
+outputs = layers.Dense(1, activation='sigmoid', name='class')(x)
+
+ 
+
+model = keras.Model(inputs=inputs, outputs=outputs)
+
